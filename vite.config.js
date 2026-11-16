@@ -11,6 +11,7 @@ const siteData = {
   yearsExperience: 15,
   email: 'miguelesquirol@gmail.com',
   linkedin: 'https://www.linkedin.com/in/miguel-esquirol-94289337/',
+  github: 'https://github.com/meu9067/consultancy',
 
   // Update this to your real deployed domain — it feeds the canonical URL,
   // Open Graph/Twitter tags, and the JSON-LD structured data below.
@@ -144,13 +145,13 @@ const jsonLd = {
       email: siteData.email,
       areaServed: 'European Union',
       knowsAbout: ['Web Accessibility', 'WCAG', 'European Accessibility Act', 'EN 301 549'],
-      sameAs: [siteData.linkedin],
+      sameAs: [siteData.linkedin, siteData.github],
       founder: {
         '@type': 'Person',
         name: siteData.name,
         jobTitle: 'Front-End Accessibility Consultant',
         email: siteData.email,
-        sameAs: [siteData.linkedin]
+        sameAs: [siteData.linkedin, siteData.github]
       },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
