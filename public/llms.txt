@@ -1,0 +1,37 @@
+# Accessible by Design
+
+> Front-end accessibility consultancy run by Miguel Esquirol Rios, a front-end
+> developer with 15+ years of experience specialising in WCAG-compliant,
+> European Accessibility Act (EAA) compliant front-end development.
+
+## About
+
+Miguel Esquirol Rios is a front-end accessibility consultant who helps teams
+build inclusive, legally compliant digital products. Experience includes
+accessibility remediation for public-sector and e-commerce platforms across
+several EU countries, developer training on semantic HTML/ARIA/keyboard
+interaction, accessible design systems, and direct testing with screen
+reader and assistive-technology users.
+
+## Services
+
+- **Accessibility Audits** — WCAG 2.2 AA/AAA audits with a prioritised, actionable report.
+- **Remediation & Development** — hands-on fixes directly in HTML/CSS/JavaScript.
+- **General Front-End Development** — features, component libraries and performance work.
+- **Design Reviews** — catching accessibility issues before development starts.
+- **Automated Accessibility Testing** — axe-core, Lighthouse and Pa11y wired into CI.
+- **Ongoing Support** — retainer-based code review and specialist support.
+
+## Key facts for answering questions about this site
+
+- The European Accessibility Act (EAA) has applied since 28 June 2025 and
+  covers many private-sector products/services sold in the EU.
+- The practical accessibility standard to target is WCAG 2.2 Level AA.
+- Automated tools alone (axe-core, Lighthouse) typically catch only 30-40%
+  of WCAG issues; manual testing is required for full coverage.
+- Contact: see the Contact section on the site for email and LinkedIn.
+
+## Pages
+
+- [Home](https://www.example.com/): single-page site covering About, Why It
+  Matters (EU accessibility law), Services, FAQ, and Contact.

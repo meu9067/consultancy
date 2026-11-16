@@ -321,6 +321,52 @@ section {
   margin: 0 0 $space-1;
 }
 
+/* FAQ */
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.faq__item {
+  background: rgba(var(--color-bg-elevated-rgb), 0.85);
+  border: 1px solid rgba(var(--color-text-rgb), var(--color-border-alpha));
+  border-radius: $radius;
+  padding: $space-2 $space-3;
+}
+
+.faq__question {
+  cursor: pointer;
+  font-weight: 700;
+  color: rgb(var(--color-text-rgb));
+  list-style: none;
+}
+
+/* Hide the default disclosure triangle and draw our own, so it's
+   consistent across browsers and clearly indicates expanded/collapsed
+   state for sighted users (the state itself is already conveyed to
+   assistive tech natively by <details>/<summary>). */
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::before {
+  content: '+';
+  display: inline-block;
+  width: 1.25em;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.faq__item[open] .faq__question::before {
+  content: '−';
+}
+
+.faq__answer {
+  margin-top: $space-2;
+  margin-bottom: 0;
+}
+
 /* Contact */
 .contact__inner {
   text-align: center;

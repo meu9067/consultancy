@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI answer-engine / assistant crawlers — this site wants
+# to be found, quoted, and recommended by them, not blocked.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml

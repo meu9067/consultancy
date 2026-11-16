@@ -12,6 +12,12 @@ const siteData = {
   email: 'miguelesquirol@gmail.com',
   linkedin: 'https://www.linkedin.com/in/miguel-esquirol-94289337/',
 
+  // Update this to your real deployed domain — it feeds the canonical URL,
+  // Open Graph/Twitter tags, and the JSON-LD structured data below.
+  siteUrl: 'https://www.example.com',
+  socialImageAlt: 'Accessible by Design — front-end accessibility consultancy',
+  locale: 'en_US',
+
   services: [
     {
       title: 'Accessibility Audits',
@@ -79,8 +85,102 @@ const siteData = {
     'Trained front-end teams on semantic HTML, ARIA and keyboard interaction patterns.',
     'Built and audited design systems with accessibility baked in from the first component.',
     'Worked directly with screen reader and assistive technology users to validate real-world usability.'
+  ],
+
+  // Plain, direct question/answer content. This is deliberately written the
+  // way an AI answer engine (or a search snippet) would want to quote it —
+  // short, self-contained answers — and is also marked up as FAQPage
+  // structured data (see index.html) for the same reason.
+  faqs: [
+    {
+      question: 'What does a front-end accessibility consultant do?',
+      answer:
+        'A front-end accessibility consultant audits websites and apps against WCAG success criteria, fixes issues directly in HTML/CSS/JavaScript code, reviews designs before development starts, and trains teams to build accessible components by default.'
+    },
+    {
+      question: 'Does my company need to comply with the European Accessibility Act?',
+      answer:
+        'If you sell products or services in the EU — e-commerce, banking, e-books, and more — the European Accessibility Act has applied since 28 June 2025. Non-compliance can mean fines, legal action, and products being pulled from the market.'
+    },
+    {
+      question: 'What accessibility standard should I target?',
+      answer:
+        'WCAG 2.2 Level AA is the practical baseline referenced by the European Accessibility Act, EN 301 549, and most public-sector procurement rules across the EU.'
+    },
+    {
+      question: 'How long does an accessibility audit take?',
+      answer:
+        'A typical audit of a single product takes one to two weeks, covering automated scanning, manual keyboard and screen reader testing, and a prioritised written report with concrete fixes.'
+    },
+    {
+      question: 'Can automated tools catch all accessibility issues?',
+      answer:
+        'No — automated tools like axe-core and Lighthouse typically catch 30-40% of WCAG issues. The rest (keyboard operability, focus order, meaningful alt text, screen reader behaviour) require manual testing by a specialist.'
+    }
   ]
 };
+
+// Structured data (JSON-LD) so search engines AND AI answer engines (ChatGPT,
+// Perplexity, Google AI Overviews, etc.) can parse facts about who you are,
+// what you offer, and the FAQ content directly — rather than having to infer
+// it from prose.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteData.siteUrl}/#website`,
+      url: siteData.siteUrl,
+      name: siteData.siteTitle,
+      description: siteData.tagline,
+      inLanguage: 'en'
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${siteData.siteUrl}/#service`,
+      name: siteData.name,
+      description: siteData.tagline,
+      url: siteData.siteUrl,
+      email: siteData.email,
+      areaServed: 'European Union',
+      knowsAbout: ['Web Accessibility', 'WCAG', 'European Accessibility Act', 'EN 301 549'],
+      sameAs: [siteData.linkedin],
+      founder: {
+        '@type': 'Person',
+        name: siteData.name,
+        jobTitle: 'Front-End Accessibility Consultant',
+        email: siteData.email,
+        sameAs: [siteData.linkedin]
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Accessibility consultancy services',
+        itemListElement: siteData.services.map((service) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: service.title,
+            description: service.description
+          }
+        }))
+      }
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteData.siteUrl}/#faq`,
+      mainEntity: siteData.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer
+        }
+      }))
+    }
+  ]
+};
+
+siteData.jsonLd = JSON.stringify(jsonLd);
 
 export default defineConfig({
   plugins: [
