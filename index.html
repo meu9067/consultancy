@@ -1,13 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#050d1f" />
-  <title>{{siteTitle}}</title>
-  <meta name="description" content="{{tagline}}" />
-  <link rel="canonical" href="{{siteUrl}}/" />
+  {{> head title=siteTitle description=tagline canonicalPath="/"}}
 
   <!-- Open Graph / Facebook, LinkedIn, etc. -->
   <meta property="og:type" content="profile" />
@@ -16,35 +10,22 @@
   <meta property="og:url" content="{{siteUrl}}/" />
   <meta property="og:locale" content="{{locale}}" />
   <meta property="og:site_name" content="{{name}}" />
+  <meta property="og:image" content="{{siteUrl}}/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{{socialImageAlt}}" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{siteTitle}}" />
   <meta name="twitter:description" content="{{tagline}}" />
+  <meta name="twitter:image" content="{{siteUrl}}/og-image.jpg" />
+  <meta name="twitter:image:alt" content="{{socialImageAlt}}" />
 
   <!-- Structured data for search engines and AI answer engines -->
   <script type="application/ld+json">{{{jsonLd}}}</script>
 
-  <script>
-    // Applied before first paint to avoid a flash of the wrong theme.
-    (function () {
-      try {
-        var stored = window.localStorage.getItem('a11y-site-theme');
-        if (stored === 'light' || stored === 'dark') {
-          document.documentElement.setAttribute('data-theme', stored);
-        }
-      } catch (e) {
-        // Storage unavailable — the site still works, just defaults to dark.
-      }
-    })();
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-  />
-  <link rel="stylesheet" href="/src/scss/main.scss" />
+  {{> head-scripts}}
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>

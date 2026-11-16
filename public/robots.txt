@@ -21,4 +21,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://consultancy.meu9067.workers.dev/sitemap.xml

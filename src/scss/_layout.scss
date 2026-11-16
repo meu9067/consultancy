@@ -133,8 +133,30 @@ section {
   padding-block: $space-6 $space-5;
   text-align: center;
   isolation: isolate;
+  background-image: linear-gradient(
+                  to bottom,
+                  rgba(var(--color-bg-rgb), var(--hero-bg-opacity)),
+                  rgba(var(--color-bg-rgb), var(--hero-bg-opacity))
+  ),
+  var(--hero-bg-image);
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+.laws {
+  background-image: linear-gradient(
+                  to bottom,
+                  rgba(var(--color-bg-rgb), var(--hero-bg-opacity)),
+                  rgba(var(--color-bg-rgb), var(--hero-bg-opacity))
+  ),
+  var(--hero-bg-image);
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -389,8 +411,67 @@ section {
 .site-footer__inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: $space-1;
+  gap: $space-2;
   font-size: 0.9rem;
   color: rgb(var(--color-text-muted-rgb));
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+}
+
+.site-footer__links a {
+  color: rgb(var(--color-text-muted-rgb));
+  text-decoration: underline;
+}
+
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* Legal pages (privacy policy, accessibility statement) */
+.legal {
+  padding-block: $space-5 $space-6;
+}
+
+.legal__back {
+  display: inline-block;
+  margin-bottom: $space-3;
+}
+
+.legal__updated {
+  font-style: italic;
+}
+
+.legal__content {
+  max-width: 70ch;
+}
+
+.legal__card {
+  background: rgba(var(--color-bg-elevated-rgb), 0.9);
+  border: 1px solid rgba(var(--color-text-rgb), var(--color-border-alpha));
+  border-radius: $radius;
+  padding: $space-4 $space-4 $space-5;
+}
+
+.legal__card h1 {
+  margin-top: 0;
+}
+
+.legal__content h2 {
+  margin-top: $space-5;
+}
+
+.legal__content ul {
+  color: rgb(var(--color-text-muted-rgb));
+  padding-left: $space-3;
+}
+
+.legal__content li {
+  margin-bottom: $space-1;
 }

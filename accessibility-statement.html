@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {{> head title=accessibilityStatementTitle description=accessibilityStatementDescription canonicalPath="/accessibility-statement.html"}}
+
+  {{> head-scripts}}
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  {{> nav}}
+
+  <main id="main-content">
+    <section class="legal" aria-labelledby="a11y-statement-title">
+      <div class="container legal__content">
+        <a class="legal__back" href="/">&larr; Back to home</a>
+        <div class="legal__card">
+          <h1 id="a11y-statement-title">Accessibility Statement</h1>
+          <p class="legal__updated">Last updated: 16 November 2026.</p>
+
+          <p>
+            {{name}} is committed to making this website accessible, in
+            line with the standards {{name}} helps other organisations
+            meet. This statement describes the conformance target, how
+            conformance was tested, and what to do if you run into a
+            problem.
+          </p>
+
+          <h2>Conformance target</h2>
+          <p>
+            This site targets <strong>WCAG 2.2 Level AA</strong>, the
+            standard referenced by the European Accessibility Act and EN
+            301 549.
+          </p>
+
+          <h2>How this was tested</h2>
+          <p>
+            Both automated and manual testing were used, because automated
+            tools alone only catch a fraction of real accessibility issues:
+          </p>
+          <ul>
+            <li>
+              Automated scanning with axe-core and HTML_CodeSniffer (via
+              Pa11y), across the dark theme, the light theme, and the
+              mobile navigation menu.
+            </li>
+            <li>Lighthouse accessibility audits.</li>
+            <li>HTML markup validation.</li>
+            <li>
+              A dedicated colour-contrast audit computed directly from the
+              site's theme colours for every foreground/background
+              pairing, in both themes.
+            </li>
+            <li>
+              A keyboard-only and real-interaction test: tabbing through
+              every control, confirming focus order and visibility, and
+              simulating actual clicks and key presses rather than only
+              inspecting markup.
+            </li>
+          </ul>
+          <p>
+            These checks run automatically before every deployment.
+          </p>
+
+          <h2>Known limitations</h2>
+          <ul>
+            <li>
+              The decorative night-sky background image is marked
+              <code>aria-hidden</code> and purely visual, but as with any
+              photographic background, it has not been independently
+              tested by assistive-technology users in every combination of
+              device and screen reader.
+            </li>
+            <li>
+              Automated testing cannot fully verify screen reader
+              announcement quality in every browser/AT combination; this
+              is reviewed periodically but not on every single change.
+            </li>
+          </ul>
+
+          <h2>Feedback and contact</h2>
+          <p>
+            If you encounter an accessibility barrier anywhere on this
+            site, please get in touch — I take this seriously and will aim
+            to respond within 5 working days:
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+            <li>
+              <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer"
+                >LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {{> footer}}
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

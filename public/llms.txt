@@ -33,5 +33,5 @@ reader and assistive-technology users.
 
 ## Pages
 
-- [Home](https://www.example.com/): single-page site covering About, Why It
+- [Home](https://consultancy.meu9067.workers.dev/): single-page site covering About, Why It
   Matters (EU accessibility law), Services, FAQ, and Contact.

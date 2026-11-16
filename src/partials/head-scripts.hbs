@@ -1,0 +1,25 @@
+<script>
+  // Applied before first paint to avoid a flash of the wrong theme.
+  // Deliberately inline + blocking (not deferred/module), so the theme is
+  // set before any CSS or body content renders. The server computes a
+  // CSP sha256 hash of this exact script instead of using
+  // 'unsafe-inline' — see server.js. If you edit this script, rebuild
+  // and the hash is recomputed automatically at server start.
+  (function () {
+    try {
+      var stored = window.localStorage.getItem('a11y-site-theme');
+      if (stored === 'light' || stored === 'dark') {
+        document.documentElement.setAttribute('data-theme', stored);
+      }
+    } catch (e) {
+      // Storage unavailable — the site still works, just defaults to dark.
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+/>
+<link rel="stylesheet" href="/src/scss/main.scss" />

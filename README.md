@@ -73,3 +73,22 @@ npm test
 Each of these builds the site first, so they always test the real compiled
 `dist/` output, not just the source.
 
+## SEO & deployment notes
+
+- `vite.config.js` → `siteData.siteUrl` is the canonical domain, used for the
+  canonical link, Open Graph/Twitter tags, and JSON-LD structured data
+  (`ProfessionalService`, `Person`, `FAQPage`). Update it if you move
+  domains, then rebuild.
+- `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` also
+  reference the live domain directly (`llms.txt` is the emerging
+  convention AI tools look for) — keep these three in sync with `siteUrl`.
+- `server.js` sends a strict `Content-Security-Policy` (no `unsafe-inline`;
+  the one inline script's hash is computed automatically from the built
+  `dist/index.html` at server start), plus standard `helmet` security
+  headers and long-lived immutable caching for hashed `dist/assets/*`
+  files.
+- `src/img/sky.jpg` is pre-compressed (resized + re-encoded) for web
+  delivery — re-run through the same process if you replace it with a
+  higher-resolution original.
+
+

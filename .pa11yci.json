@@ -24,6 +24,8 @@
       "viewport": { "width": 375, "height": 812 },
       "actions": ["click element .site-nav__toggle"],
       "comment": "Mobile viewport with the nav menu expanded"
-    }
+    },
+    "http://localhost:3000/privacy.html",
+    "http://localhost:3000/accessibility-statement.html"
   ]
 }

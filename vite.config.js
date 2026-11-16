@@ -13,9 +13,16 @@ const siteData = {
   linkedin: 'https://www.linkedin.com/in/miguel-esquirol-94289337/',
   github: 'https://github.com/meu9067/consultancy',
 
+  // Unsplash's license doesn't require attribution, but it's good practice —
+  // this links to the original photo page. If you know the photographer's
+  // name, consider updating the footer link text in footer.hbs to
+  // "Photo by <Name> on Unsplash" (Unsplash's own recommended format).
+  backgroundPhotoCredit:
+    'https://unsplash.com/photos/silhouette-of-man-looking-at-milky-way-lcT_p8kLCsc',
+
   // Update this to your real deployed domain — it feeds the canonical URL,
   // Open Graph/Twitter tags, and the JSON-LD structured data below.
-  siteUrl: 'https://www.example.com',
+  siteUrl: 'https://consultancy.meu9067.workers.dev',
   socialImageAlt: 'Accessible by Design — front-end accessibility consultancy',
   locale: 'en_US',
 
@@ -143,6 +150,7 @@ const jsonLd = {
       description: siteData.tagline,
       url: siteData.siteUrl,
       email: siteData.email,
+      image: `${siteData.siteUrl}/og-image.jpg`,
       areaServed: 'European Union',
       knowsAbout: ['Web Accessibility', 'WCAG', 'European Accessibility Act', 'EN 301 549'],
       sameAs: [siteData.linkedin, siteData.github],
@@ -183,6 +191,15 @@ const jsonLd = {
 
 siteData.jsonLd = JSON.stringify(jsonLd);
 
+// Per-page <title>/meta description for the secondary (legal) pages —
+// computed here (not duplicated as literal strings) so privacy.html and
+// accessibility-statement.html can both use the shared
+// src/partials/head.hbs partial.
+siteData.privacyTitle = `Privacy Policy — ${siteData.name}`;
+siteData.privacyDescription = `Privacy policy for ${siteData.name}'s accessibility consultancy site: what data is collected, why, and your rights.`;
+siteData.accessibilityStatementTitle = `Accessibility Statement — ${siteData.name}`;
+siteData.accessibilityStatementDescription = `Accessibility statement for ${siteData.name}'s site: conformance target, testing methods, known limitations, and how to report issues.`;
+
 export default defineConfig({
   plugins: [
     handlebars({
@@ -198,7 +215,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    assetsInlineLimit: 4096
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
+        accessibilityStatement: resolve(__dirname, 'accessibility-statement.html')
+      }
+    }
   },
   server: {
     port: 5173

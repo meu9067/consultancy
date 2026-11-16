@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {{> head title=privacyTitle description=privacyDescription canonicalPath="/privacy.html"}}
+  <meta name="robots" content="noindex, follow" />
+
+  {{> head-scripts}}
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  {{> nav}}
+
+  <main id="main-content">
+    <section class="legal" aria-labelledby="privacy-title">
+      <div class="container legal__content">
+        <a class="legal__back" href="/">&larr; Back to home</a>
+        <div class="legal__card">
+          <h1 id="privacy-title">Privacy Policy</h1>
+          <p class="legal__updated">Last updated: 16 November 2026.</p>
+
+          <p>
+            This is a static, single-page brochure site. It does not use
+            cookies, does not run third-party analytics or advertising
+            scripts, and does not collect personal data through any form on
+            this site — there isn't one. This policy explains the small
+            amount of data that is processed and why.
+          </p>
+
+          <h2>What data is processed</h2>
+          <ul>
+            <li>
+              <strong>Theme preference.</strong> If you use the dark/light
+              mode toggle, your choice is saved in your browser's
+              <code>localStorage</code> so it's remembered on your next
+              visit. This never leaves your device and is not sent to any
+              server.
+            </li>
+            <li>
+              <strong>Standard server logs.</strong> Like virtually all web
+              hosting, the server/CDN serving this site may log basic
+              technical request data (IP address, user agent, requested
+              URL, timestamp) for security and operational purposes. These
+              logs are not used for tracking or profiling.
+            </li>
+            <li>
+              <strong>Google Fonts.</strong> This site loads the "Atkinson
+              Hyperlegible" typeface from Google Fonts'
+              <code>fonts.googleapis.com</code>/<code>fonts.gstatic.com</code>.
+              Loading a font from Google's servers means your browser makes
+              a request to Google, which may process the associated
+              technical request data (such as your IP address) under
+              Google's own privacy policy.
+            </li>
+            <li>
+              <strong>Contact details you choose to send.</strong> If you
+              email or message via LinkedIn/GitHub using the links on this
+              site, whatever you send is processed the same way any email
+              or direct message is — it isn't collected by this website
+              itself.
+            </li>
+          </ul>
+
+          <h2>Your rights</h2>
+          <p>
+            If you're in the EU/EEA, you have rights under the GDPR
+            (access, correction, deletion, objection) over any personal
+            data processed in connection with this site. Given how little
+            is processed, this mostly concerns the server log and Google
+            Fonts requests described above. To ask a question or exercise a
+            right, contact {{name}} at
+            <a href="mailto:{{email}}">{{email}}</a>.
+          </p>
+
+          <h2>Changes to this policy</h2>
+          <p>
+            If what this site collects or how it's hosted changes, this
+            page will be updated and the "last updated" date above will
+            change accordingly.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {{> footer}}
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
