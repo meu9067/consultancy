@@ -1,0 +1,43 @@
+// Colour palette, exposed as CSS custom properties so the theme can be
+// switched at runtime (see the theme toggle button in the header).
+//
+// Channels are stored as "r, g, b" triplets so they can be combined with an
+// alpha value via rgba(var(--color-x-rgb), <alpha>).
+
+:root {
+  --color-bg-rgb: 1, 3, 6; // near-black deep blue
+  --color-bg-alt-rgb: 8, 22, 48; // slightly lighter panel blue
+  --color-bg-elevated-rgb: 13, 32, 71;
+
+  --color-text-rgb: 255, 253, 246; // lighter yellowish white
+  --color-text-muted-rgb: 243, 236, 212;
+
+  --color-accent: #f4c95d; // warm yellow accent
+  --color-accent-dark: #c79a2e;
+  --color-focus: #ffd866;
+
+  --color-border-alpha: 0.15;
+
+  --hero-bg-image: url('../img/sky.jpg');
+  --hero-bg-opacity: 0.2;
+}
+
+:root[data-theme='light'] {
+  --color-bg-rgb: 255, 255, 255;
+  --color-bg-alt-rgb: 240, 242, 247;
+  --color-bg-elevated-rgb: 255, 255, 255;
+
+  --color-text-rgb: 15, 23, 42; // dark blue-grey text on white
+  --color-text-muted-rgb: 51, 61, 82;
+
+  --color-accent: #6b21a8; // rich purple — keeps AAA contrast on white
+  --color-accent-dark: #4c1580;
+  --color-focus: #6b21a8;
+
+  --color-border-alpha: 0.12;
+
+  // The starfield photo doesn't read well on a light theme; fall back to a
+  // plain surface instead of forcing the dark image through a heavy overlay.
+  --hero-bg-image: none;
+  --hero-bg-opacity: 1;
+}

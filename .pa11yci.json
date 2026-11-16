@@ -1,0 +1,29 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": ["axe", "htmlcs"],
+    "timeout": 30000,
+    "levelCapWhenNeedsReview": "notice",
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-gpu"]
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    }
+  },
+  "urls": [
+    "http://localhost:3000/",
+    {
+      "url": "http://localhost:3000/",
+      "actions": ["click element #theme-toggle"],
+      "comment": "Light theme, toggled via the header button"
+    },
+    {
+      "url": "http://localhost:3000/",
+      "viewport": { "width": 375, "height": 812 },
+      "actions": ["click element .site-nav__toggle"],
+      "comment": "Mobile viewport with the nav menu expanded"
+    }
+  ]
+}

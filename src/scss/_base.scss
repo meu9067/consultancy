@@ -1,0 +1,143 @@
+@use 'variables' as *;
+@use 'theme';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  position: relative;
+  // Establishes a local stacking context so that .page-bg's z-index: -1
+  // stays scoped to body (painted above body's own background, below its
+  // in-flow content) instead of escaping to the root stacking context,
+  // where it would be hidden entirely behind body's opaque background.
+  isolation: isolate;
+  margin: 0;
+  font-family: $font-base;
+  color: rgb(var(--color-text-rgb));
+  line-height: 1.6;
+  font-size: 1rem;
+  background-color: rgb(var(--color-bg-rgb));
+  transition: background-color $transition, color $transition;
+}
+
+/* Dedicated background layer, pinned near the real bottom of the page via
+   a pixel `bottom` offset (not a percentage, which would be indeterminate
+   against body's auto height). `height` here is just a sane CSS-only
+   fallback (one viewport tall) for when JS is unavailable; with JS,
+   initBackgroundParallax() (main.js) resizes it to the full document
+   height so the image/overlay is visible behind every section, not just
+   the last screen. The extra buffer above and below gives room to shift
+   vertically without ever exposing an edge. Movement is a vertical CSS
+   transform (see --hero-scroll-shift in main.js), nudging the image down
+   slightly as the page is scrolled. */
+.page-bg {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(var(--color-bg-rgb), var(--hero-bg-opacity)),
+      rgba(var(--color-bg-rgb), var(--hero-bg-opacity))
+    ),
+    var(--hero-bg-image);
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: rgb(var(--color-text-rgb));
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 2.25rem);
+  margin-bottom: $space-3;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: rgb(var(--color-text-muted-rgb));
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Strong, visible focus indicator for keyboard users (WCAG 2.4.7 / 2.4.11) */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: $space-2;
+  z-index: 100;
+  background: var(--color-accent);
+  color: rgb(var(--color-bg-rgb));
+  padding: $space-1 $space-3;
+  border-radius: $radius;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top $transition;
+}
+
+.skip-link:focus {
+  top: $space-2;
+}

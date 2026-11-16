@@ -1,0 +1,19 @@
+<section id="about" class="about" aria-labelledby="about-title">
+  <div class="container">
+    <h2 id="about-title">About Me</h2>
+    <div class="about__grid">
+      <p class="about__intro">
+        I'm {{name}}, a front-end developer specialising in web accessibility.
+        Over {{yearsExperience}} years I've helped teams across Europe turn
+        inaccessible interfaces into inclusive, standards-compliant products —
+        without sacrificing design or performance. I work hands-on with code,
+        not just checklists.
+      </p>
+      <ul class="about__list">
+        {{#each experienceHighlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>

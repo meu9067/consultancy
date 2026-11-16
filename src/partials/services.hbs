@@ -1,0 +1,18 @@
+<section id="services" class="services" aria-labelledby="services-title">
+  <div class="container">
+    <h2 id="services-title">Services</h2>
+    <p class="services__intro">
+      Flexible engagements tailored to where you are in your accessibility
+      journey — from a one-off audit to long-term development support.
+    </p>
+    <ul class="services__grid">
+      {{#each services}}
+      <li class="services__card">
+        <span class="services__icon" aria-hidden="true">{{icon}}</span>
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
