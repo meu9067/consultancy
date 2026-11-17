@@ -1,14 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{htmlLang}}">
 <head>
   {{> head title=siteTitle description=tagline canonicalPath="/"}}
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}/" />
+  <link rel="alternate" hreflang="pt-PT" href="{{siteUrl}}/pt/" />
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}/" />
 
   <!-- Open Graph / Facebook, LinkedIn, etc. -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="{{siteTitle}}" />
   <meta property="og:description" content="{{tagline}}" />
   <meta property="og:url" content="{{siteUrl}}/" />
-  <meta property="og:locale" content="{{locale}}" />
+  <meta property="og:locale" content="{{ogLocale}}" />
   <meta property="og:site_name" content="{{name}}" />
   <meta property="og:image" content="{{siteUrl}}/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -29,9 +32,9 @@
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">{{skipLink}}</a>
 
-  {{> nav}}
+  {{> nav enHref="/" ptHref="/pt/"}}
 
   <main id="main-content">
     {{> hero}}

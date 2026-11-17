@@ -48,7 +48,11 @@ function applyTheme(theme, toggle) {
   const label = toggle.querySelector('.theme-toggle__label');
 
   if (icon) icon.textContent = isLight ? '☀️' : '🌙';
-  if (label) label.textContent = isLight ? 'Light mode' : 'Dark mode';
+  if (label) {
+    label.textContent = isLight
+      ? toggle.dataset.labelLight || 'Light mode'
+      : toggle.dataset.labelDark || 'Dark mode';
+  }
 }
 
 function initThemeToggle() {

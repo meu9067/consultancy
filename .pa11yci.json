@@ -26,6 +26,14 @@
       "comment": "Mobile viewport with the nav menu expanded"
     },
     "http://localhost:3000/privacy.html",
-    "http://localhost:3000/accessibility-statement.html"
+    "http://localhost:3000/accessibility-statement.html",
+    "http://localhost:3000/pt/",
+    {
+      "url": "http://localhost:3000/pt/",
+      "actions": ["click element #theme-toggle"],
+      "comment": "Portuguese page, light theme, toggled via the header button"
+    },
+    "http://localhost:3000/pt/privacy.html",
+    "http://localhost:3000/pt/accessibility-statement.html"
   ]
 }

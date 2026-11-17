@@ -97,6 +97,36 @@ section {
   font-size: 1rem;
 }
 
+/* Language switcher */
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(var(--color-text-rgb), var(--color-border-alpha));
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.language-switcher__link {
+  display: inline-flex;
+  align-items: center;
+  padding: $space-1 $space-2;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(var(--color-text-rgb));
+  transition: background-color $transition, color $transition;
+}
+
+.language-switcher__link:hover,
+.language-switcher__link:focus-visible {
+  color: var(--color-accent);
+}
+
+.language-switcher__link.is-current {
+  background: var(--color-accent);
+  color: rgb(var(--color-bg-rgb));
+}
+
 @media (max-width: 40rem) {
   .site-nav__toggle {
     display: inline-flex;

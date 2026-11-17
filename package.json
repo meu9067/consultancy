@@ -12,7 +12,7 @@
     "deploy": "npm run build && node server.js",
     "start": "node server.js",
     "test:contrast": "node test/contrast.test.cjs",
-    "test:html": "npm run build && html-validate dist/index.html dist/privacy.html dist/accessibility-statement.html",
+    "test:html": "npm run build && html-validate dist/index.html dist/privacy.html dist/accessibility-statement.html dist/pt/index.html dist/pt/privacy.html dist/pt/accessibility-statement.html",
     "test:a11y": "npm run build && start-server-and-test start http://localhost:3000 pa11y-ci",
     "test:keyboard": "npm run build && start-server-and-test start http://localhost:3000 \"node test/keyboard-nav.test.cjs\"",
     "test:lighthouse": "npm run build && start-server-and-test start http://localhost:3000 \"node scripts/run-lighthouse.cjs\"",

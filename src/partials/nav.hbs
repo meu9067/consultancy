@@ -1,15 +1,31 @@
 <header class="site-nav">
   <div class="container site-nav__inner">
-    <a class="site-nav__brand" href="/#main-content">{{name}}</a>
+    <a class="site-nav__brand" href="{{localePrefix}}/#main-content">{{name}}</a>
     <div class="site-nav__group">
+      <div class="language-switcher" role="group" aria-label="{{languageSwitcherLabel}}">
+        <a
+          class="language-switcher__link{{#unless localePrefix}} is-current{{/unless}}"
+          href="{{enHref}}"
+          {{#unless localePrefix}}aria-current="true"{{/unless}}
+          >EN</a
+        >
+        <a
+          class="language-switcher__link{{#if localePrefix}} is-current{{/if}}"
+          href="{{ptHref}}"
+          {{#if localePrefix}}aria-current="true"{{/if}}
+          >PT</a
+        >
+      </div>
       <button
         class="theme-toggle"
         type="button"
         id="theme-toggle"
         aria-pressed="false"
+        data-label-dark="{{themeToggleDark}}"
+        data-label-light="{{themeToggleLight}}"
       >
         <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
-        <span class="theme-toggle__label">Dark mode</span>
+        <span class="theme-toggle__label">{{themeToggleDark}}</span>
       </button>
       <nav aria-label="Primary">
         <button
@@ -18,16 +34,10 @@
           aria-expanded="false"
           aria-controls="primary-menu"
         >
-          <span class="visually-hidden">Toggle navigation menu</span>
+          <span class="visually-hidden">{{toggleMenuLabel}}</span>
           <span aria-hidden="true">☰</span>
         </button>
-        <ul id="primary-menu" class="site-nav__list">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#laws">Why It Matters</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
+
       </nav>
     </div>
   </div>

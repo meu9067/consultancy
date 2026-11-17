@@ -1,17 +1,17 @@
 <footer class="site-footer">
   <div class="container site-footer__inner">
-    <p>&copy; <span id="current-year">2025</span> {{name}}. All rights reserved.</p>
+    <p>&copy; <span id="current-year">2025</span> {{name}}. {{footer.rights}}</p>
     <p class="site-footer__note">
-      Built accessible, from the ground up. Background photo via
+      {{footer.noteBefore}}
       <a href="{{backgroundPhotoCredit}}" target="_blank" rel="noopener noreferrer"
-        >Unsplash<span class="visually-hidden"> (opens in a new tab)</span></a
+        >{{footer.noteLinkText}}<span class="visually-hidden"> {{contact.newTabSuffix}}</span></a
       >.
     </p>
     <nav class="site-footer__links" aria-label="Legal">
-      <a href="/accessibility-statement.html">Accessibility statement</a>
-      <a href="/privacy.html">Privacy policy</a>
+      <a href="{{localePrefix}}/accessibility-statement.html">{{footer.accessibilityStatement}}</a>
+      <a href="{{localePrefix}}/privacy.html">{{footer.privacyPolicy}}</a>
       <a href="{{github}}" target="_blank" rel="noopener noreferrer"
-        >Source on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a
+        >{{footer.sourceOnGitHub}}<span class="visually-hidden"> {{contact.newTabSuffix}}</span></a
       >
     </nav>
   </div>

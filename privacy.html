@@ -1,21 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{htmlLang}}">
 <head>
   {{> head title=privacyTitle description=privacyDescription canonicalPath="/privacy.html"}}
   <meta name="robots" content="noindex, follow" />
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}/privacy.html" />
+  <link rel="alternate" hreflang="pt-PT" href="{{siteUrl}}/pt/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}/privacy.html" />
 
   {{> head-scripts}}
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">{{skipLink}}</a>
 
-  {{> nav}}
+  {{> nav enHref="/privacy.html" ptHref="/pt/privacy.html"}}
 
   <main id="main-content">
     <section class="legal" aria-labelledby="privacy-title">
       <div class="container legal__content">
-        <a class="legal__back" href="/">&larr; Back to home</a>
+        <a class="legal__back" href="{{localePrefix}}/">&larr; Back to home</a>
         <div class="legal__card">
           <h1 id="privacy-title">Privacy Policy</h1>
           <p class="legal__updated">Last updated: 16 November 2026.</p>

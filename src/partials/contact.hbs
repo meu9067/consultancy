@@ -1,13 +1,12 @@
 <section id="contact" class="contact" aria-labelledby="contact-title">
   <div class="container contact__inner">
-    <h2 id="contact-title">Let's make your product accessible</h2>
+    <h2 id="contact-title">{{contact.title}}</h2>
     <p>
-      Whether you need an audit, hands-on remediation, or training for your
-      team, I'd love to hear about your project.
+      {{contact.body}}
     </p>
     <div class="contact__actions">
       <a class="button button--primary" href="mailto:{{email}}">
-        Email {{email}}
+        {{contact.emailPrefix}} {{email}}
       </a>
       <a
         class="button button--ghost"
@@ -15,8 +14,8 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Connect on LinkedIn
-        <span class="visually-hidden">(opens in a new tab)</span>
+        {{contact.linkedinCta}}
+        <span class="visually-hidden">{{contact.newTabSuffix}}</span>
       </a>
       <a
         class="button button--ghost"
@@ -24,8 +23,8 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        View on GitHub
-        <span class="visually-hidden">(opens in a new tab)</span>
+        {{contact.githubCta}}
+        <span class="visually-hidden">{{contact.newTabSuffix}}</span>
       </a>
     </div>
   </div>

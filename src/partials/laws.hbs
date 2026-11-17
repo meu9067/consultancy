@@ -1,13 +1,11 @@
 <section id="laws" class="laws" aria-labelledby="laws-title">
   <div class="container">
-    <h2 id="laws-title">New laws, new obligations</h2>
+    <h2 id="laws-title">{{laws.title}}</h2>
     <p class="laws__intro">
-      Accessibility is no longer optional. Across the European Union, a wave of
-      regulation now makes inclusive design a legal requirement for public and
-      private organisations alike.
+      {{laws.intro}}
     </p>
     <div class="laws__grid">
-      {{#each laws}}
+      {{#each lawsList}}
       <article class="laws__card">
         <h3>{{title}}</h3>
         <p>{{description}}</p>

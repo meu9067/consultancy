@@ -35,3 +35,5 @@ reader and assistive-technology users.
 
 - [Home](https://consultancy.meu9067.workers.dev/): single-page site covering About, Why It
   Matters (EU accessibility law), Services, FAQ, and Contact.
+- [Home (Portuguese)](https://consultancy.meu9067.workers.dev/pt/): European Portuguese
+  translation of the same page.

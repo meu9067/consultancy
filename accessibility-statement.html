@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{htmlLang}}">
 <head>
   {{> head title=accessibilityStatementTitle description=accessibilityStatementDescription canonicalPath="/accessibility-statement.html"}}
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}/accessibility-statement.html" />
+  <link rel="alternate" hreflang="pt-PT" href="{{siteUrl}}/pt/accessibility-statement.html" />
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}/accessibility-statement.html" />
 
   {{> head-scripts}}
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">{{skipLink}}</a>
 
-  {{> nav}}
+  {{> nav enHref="/accessibility-statement.html" ptHref="/pt/accessibility-statement.html"}}
 
   <main id="main-content">
     <section class="legal" aria-labelledby="a11y-statement-title">
       <div class="container legal__content">
-        <a class="legal__back" href="/">&larr; Back to home</a>
+        <a class="legal__back" href="{{localePrefix}}/">&larr; Back to home</a>
         <div class="legal__card">
           <h1 id="a11y-statement-title">Accessibility Statement</h1>
           <p class="legal__updated">Last updated: 16 November 2026.</p>
