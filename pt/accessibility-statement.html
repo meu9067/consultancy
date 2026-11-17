@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+  {{> head title=accessibilityStatementTitle description=accessibilityStatementDescription canonicalPath="/pt/accessibility-statement.html"}}
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}/accessibility-statement.html" />
+  <link rel="alternate" hreflang="pt-PT" href="{{siteUrl}}/pt/accessibility-statement.html" />
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}/accessibility-statement.html" />
+
+  {{> head-scripts}}
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">{{skipLink}}</a>
+
+  {{> nav enHref="/accessibility-statement.html" ptHref="/pt/accessibility-statement.html"}}
+
+  <main id="main-content">
+    <section class="legal" aria-labelledby="a11y-statement-title">
+      <div class="container legal__content">
+        <a class="legal__back" href="{{localePrefix}}/">&larr; Voltar ao início</a>
+        <div class="legal__card">
+          <h1 id="a11y-statement-title">Declaração de Acessibilidade</h1>
+          <p class="legal__updated">Última atualização: 16 de novembro de 2026.</p>
+
+          <p>
+            {{name}} está empenhado em tornar este site acessível, em linha
+            com as normas que {{name}} ajuda outras organizações a cumprir.
+            Esta declaração descreve o objetivo de conformidade, como a
+            conformidade foi testada, e o que fazer caso encontre um
+            problema.
+          </p>
+
+          <h2>Objetivo de conformidade</h2>
+          <p>
+            Este site tem como objetivo o nível <strong>WCAG 2.2 AA</strong>,
+            a norma referenciada pela Lei Europeia de Acessibilidade e pela
+            EN 301 549.
+          </p>
+
+          <h2>Como isto foi testado</h2>
+          <p>
+            Foram utilizados testes automáticos e manuais, porque as
+            ferramentas automáticas, por si só, detetam apenas uma fração
+            dos problemas reais de acessibilidade:
+          </p>
+          <ul>
+            <li>
+              Análise automática com axe-core e HTML_CodeSniffer (via
+              Pa11y), no tema escuro, no tema claro e no menu de navegação
+              para dispositivos móveis.
+            </li>
+            <li>Auditorias de acessibilidade com o Lighthouse.</li>
+            <li>Validação da marcação HTML.</li>
+            <li>
+              Uma auditoria dedicada de contraste de cor, calculada
+              diretamente a partir das cores do tema do site para cada
+              combinação de primeiro plano/fundo, em ambos os temas.
+            </li>
+            <li>
+              Um teste exclusivamente por teclado e de interação real:
+              percorrendo cada controlo com Tab, confirmando a ordem e a
+              visibilidade do foco, e simulando cliques e teclas reais em
+              vez de apenas inspecionar a marcação.
+            </li>
+          </ul>
+          <p>
+            Estas verificações são executadas automaticamente antes de cada
+            publicação.
+          </p>
+
+          <h2>Limitações conhecidas</h2>
+          <ul>
+            <li>
+              A imagem de fundo decorativa do céu noturno está marcada com
+              <code>aria-hidden</code> e é puramente visual, mas, tal como
+              acontece com qualquer fundo fotográfico, não foi testada de
+              forma independente por utilizadores de tecnologias de apoio
+              em todas as combinações de dispositivo e leitor de ecrã.
+            </li>
+            <li>
+              Os testes automáticos não conseguem verificar totalmente a
+              qualidade dos anúncios de leitores de ecrã em todas as
+              combinações de navegador/tecnologia de apoio; isto é revisto
+              periodicamente, mas não em todas as alterações.
+            </li>
+          </ul>
+
+          <h2>Feedback e contacto</h2>
+          <p>
+            Se encontrar uma barreira de acessibilidade em qualquer parte
+            deste site, entre em contacto — levo isto a sério e tentarei
+            responder no prazo de 5 dias úteis:
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+            <li>
+              <a href="{{linkedin}}" target="_blank" rel="noopener noreferrer"
+                >LinkedIn<span class="visually-hidden"> (abre numa nova janela)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {{> footer}}
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

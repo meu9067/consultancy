@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+  {{> head title=privacyTitle description=privacyDescription canonicalPath="/pt/privacy.html"}}
+  <meta name="robots" content="noindex, follow" />
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}/privacy.html" />
+  <link rel="alternate" hreflang="pt-PT" href="{{siteUrl}}/pt/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}/privacy.html" />
+
+  {{> head-scripts}}
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">{{skipLink}}</a>
+
+  {{> nav enHref="/privacy.html" ptHref="/pt/privacy.html"}}
+
+  <main id="main-content">
+    <section class="legal" aria-labelledby="privacy-title">
+      <div class="container legal__content">
+        <a class="legal__back" href="{{localePrefix}}/">&larr; Voltar ao início</a>
+        <div class="legal__card">
+          <h1 id="privacy-title">Política de Privacidade</h1>
+          <p class="legal__updated">Última atualização: 16 de novembro de 2026.</p>
+
+          <p>
+            Este é um site estático, de página única. Não utiliza cookies,
+            não executa scripts de análise ou publicidade de terceiros, e
+            não recolhe dados pessoais através de nenhum formulário neste
+            site — não existe nenhum. Esta política explica a pequena
+            quantidade de dados que é processada e porquê.
+          </p>
+
+          <h2>Que dados são processados</h2>
+          <ul>
+            <li>
+              <strong>Preferência de tema.</strong> Se utilizar o botão de
+              alternância entre modo claro/escuro, a sua escolha é guardada
+              no <code>localStorage</code> do seu navegador, para ser
+              recordada na próxima visita. Esta informação nunca sai do seu
+              dispositivo e não é enviada para nenhum servidor.
+            </li>
+            <li>
+              <strong>Registos de servidor padrão.</strong> Como
+              praticamente todo o alojamento web, o servidor/CDN que serve
+              este site pode registar dados técnicos básicos do pedido
+              (endereço IP, user agent, URL pedido, data/hora) para fins de
+              segurança e operacionais. Estes registos não são utilizados
+              para rastreio ou criação de perfis.
+            </li>
+            <li>
+              <strong>Google Fonts.</strong> Este site carrega o tipo de
+              letra "Atkinson Hyperlegible" a partir do
+              <code>fonts.googleapis.com</code>/<code>fonts.gstatic.com</code>
+              da Google. Carregar um tipo de letra a partir dos servidores
+              da Google significa que o seu navegador faz um pedido à
+              Google, que pode processar os dados técnicos associados ao
+              pedido (como o seu endereço IP) de acordo com a sua própria
+              política de privacidade.
+            </li>
+            <li>
+              <strong>Dados de contacto que opte por enviar.</strong> Se
+              enviar um email ou uma mensagem via LinkedIn/GitHub através
+              das ligações neste site, o que enviar é processado da mesma
+              forma que qualquer email ou mensagem direta — não é recolhido
+              por este site.
+            </li>
+          </ul>
+
+          <h2>Os seus direitos</h2>
+          <p>
+            Se estiver na UE/EEE, tem direitos ao abrigo do RGPD (acesso,
+            retificação, eliminação, oposição) sobre quaisquer dados
+            pessoais processados em relação a este site. Dada a reduzida
+            quantidade de dados processados, isto diz essencialmente
+            respeito aos registos de servidor e aos pedidos à Google Fonts
+            descritos acima. Para colocar uma questão ou exercer um
+            direito, contacte {{name}} através de
+            <a href="mailto:{{email}}">{{email}}</a>.
+          </p>
+
+          <h2>Alterações a esta política</h2>
+          <p>
+            Se o que este site recolhe ou a forma como é alojado mudar,
+            esta página será atualizada e a data de "última atualização"
+            acima será alterada em conformidade.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {{> footer}}
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
